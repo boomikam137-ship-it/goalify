@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goalify | Adaptive Goal Engine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- LOGIN PAGE -->
+<section id="loginPage" class="login-page">
+    <div class="login-card">
+        <div class="logo">🌱 Goalify</div>
+        <h1>Welcome Back!</h1>
+        <p>Turn your dreams into achievable goals.</p>
+
+        <input type="text" id="loginName" placeholder="Enter your name">
+        <input type="email" id="loginEmail" placeholder="Enter your email">
+
+        <button onclick="login()">Login to Goalify</button>
+
+        <small>© 2026 Goalify</small>
+    </div>
+</section>
+
+
+<!-- MAIN WEBSITE -->
+<div id="mainWebsite" class="hidden">
+
+<header>
+    <nav class="navbar">
+
+        <div class="brand">
+            🌱 <span>Goalify</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+            <a href="#goals">Goals</a>
+            <a href="#progress">Progress</a>
+            <a href="#contact">Contact</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
+
+    </nav>
+</header>
+
+
+<!-- HERO -->
+<section id="home" class="hero">
+
+    <div class="hero-content">
+
+        <span class="badge">✨ Adaptive Goal Engine</span>
+
+        <h1>
+            Save Today.<br>
+            <span>Achieve Tomorrow.</span>
+        </h1>
+
+        <p>
+            Goalify helps you plan, save and achieve your dreams
+            with smart daily saving guidance.
+        </p>
+
+        <button onclick="scrollToGoals()">Start Your Goal 🚀</button>
+
+    </div>
+
+    <div class="hero-tree">
+        🌳
+        <p>Your Goals Grow Here</p>
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section id="about" class="section">
+
+    <h2>About Goalify</h2>
+
+    <p class="section-text">
+        Goalify is a smart personal savings platform designed to help
+        users create financial goals, track daily savings and finally
+        purchase their desired product after achieving the target.
+    </p>
+
+    <div class="stats">
+
+        <div class="stat-card">
+            🎯
+            <h3>Smart Goals</h3>
+            <p>Create goals easily</p>
+        </div>
+
+        <div class="stat-card">
+            💰
+            <h3>Smart Savings</h3>
+            <p>Track your savings</p>
+        </div>
+
+        <div class="stat-card">
+            🛍️
+            <h3>Buy Goal</h3>
+            <p>Purchase after achieving</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURES -->
+<section id="features" class="section light">
+
+    <h2>Powerful Features</h2>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            🎯
+            <h3>Goal Creation</h3>
+            <p>Set your dream product and target amount.</p>
+        </div>
+
+        <div class="feature-card">
+            💵
+            <h3>Daily Savings</h3>
+            <p>Choose how much you can save every day.</p>
+        </div>
+
+        <div class="feature-card">
+            🧠
+            <h3>Adaptive Alert</h3>
+            <p>Get alerts when your saving plan needs adjustment.</p>
+        </div>
+
+        <div class="feature-card">
+            🌳
+            <h3>Visual Tree</h3>
+            <p>Watch your goal grow as you save.</p>
+        </div>
+
+        <div class="feature-card">
+            💳
+            <h3>Payment</h3>
+            <p>Add your savings payment and track transactions.</p>
+        </div>
+
+        <div class="feature-card">
+            🛍️
+            <h3>Buy Now</h3>
+            <p>Purchase your goal after reaching 100%.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GOALS -->
+<section id="goals" class="section">
+
+    <h2>Create Your Goal</h2>
+
+    <div class="goal-form">
+
+        <input type="text" id="goalName"
+               placeholder="Goal name e.g. Bike, Mobile">
+
+        <input type="number" id="goalAmount"
+               placeholder="Target amount ₹">
+
+        <input type="number" id="dailySaving"
+               placeholder="Daily saving ₹">
+
+        <button onclick="createGoal()">
+            + Create Goal
+        </button>
+
+    </div>
+
+
+    <div id="alertBox"></div>
+
+
+    <div id="goalContainer"></div>
+
+</section>
+
+
+<!-- PROGRESS -->
+<section id="progress" class="section light">
+
+    <h2>Your Progress</h2>
+
+    <div class="progress-box">
+
+        <div class="big-progress" id="overallProgress">
+            0%
+        </div>
+
+        <h3>Keep Growing Your Dreams 🌱</h3>
+
+        <p id="progressText">
+            Create a goal to start your journey.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- HISTORY -->
+<section id="history" class="section">
+
+    <h2>Payment & Purchase History</h2>
+
+    <div id="historyContainer" class="history-container">
+        <p>No transactions yet.</p>
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="section contact-section">
+
+    <h2>Contact Us</h2>
+
+    <div class="contact-grid">
+
+        <div class="contact-card">
+            📧
+            <h3>Email</h3>
+            <p>boomikam137@gmail.com</p>
+        </div>
+
+        <div class="contact-card">
+            📞
+            <h3>Contact Us</h3>
+            <p>6383905764</p>
+        </div>
+
+        <div class="contact-card">
+            🆘
+            <h3>Help / Support</h3>
+            <p>Need help with your goal?</p>
+            <button onclick="support()">Get Support</button>
+        </div>
+
+        <div class="contact-card">
+            💬
+            <h3>Feedback</h3>
+            <textarea id="feedback"
+                      placeholder="Write your feedback..."></textarea>
+            <button onclick="sendFeedback()">Send Feedback</button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-logo">
+        🌱 Goalify
+    </div>
+
+    <p>
+        Adaptive Goal Engine for smarter savings.
+    </p>
+
+    <p>
+        Created by <strong>BOOMIKA MURUGESAN</strong>
+    </p>
+
+    <p>
+        AVP College of Arts and Science
+    </p>
+
+    <p class="copyright">
+        © 2026 Goalify. All Rights Reserved.
+    </p>
+
+</footer>
+
+</div>
+
+<!-- PAYMENT MODAL -->
+<div id="paymentModal" class="modal">
+
+    <div class="modal-card">
+
+        <span class="close" onclick="closePayment()">×</span>
+
+        <h2>💳 Add Savings</h2>
+
+        <p id="paymentGoalName"></p>
+
+        <input type="number"
+               id="paymentAmount"
+               placeholder="Enter amount ₹">
+
+        <select id="paymentMethod">
+            <option value="">Select Payment Method</option>
+            <option>UPI</option>
+            <option>Cash</option>
+            <option>Bank Transfer</option>
+            <option>Card</option>
+        </select>
+
+        <button onclick="makePayment()">
+            Add Payment
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- BUY MODAL -->
+<div id="buyModal" class="modal">
+
+    <div class="modal-card">
+
+        <span class="close" onclick="closeBuy()">×</span>
+
+        <h2>🛍️ Buy Your Goal</h2>
+
+        <p id="buyGoalName"></p>
+
+        <p class="success-text">
+            🎉 Congratulations! Your goal is 100% complete.
+        </p>
+
+        <input type="text"
+               id="buyAddress"
+               placeholder="Enter delivery address">
+
+        <select id="buyPayment">
+            <option>Select purchase payment</option>
+            <option>UPI</option>
+            <option>Card</option>
+            <option>Cash on Delivery</option>
+        </select>
+
+        <button onclick="purchaseGoal()">
+            Confirm Purchase 🛍️
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
